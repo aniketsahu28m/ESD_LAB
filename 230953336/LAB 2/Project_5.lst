@@ -1,0 +1,130 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0x10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000         ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 4801            LDR              R0,=SRC
+   12 00000002 6801            LDR              R1,[R0]
+   13 00000004         
+   14 00000004         
+   15 00000004         STOP
+   16 00000004 E7FE            B                STOP
+   17 00000006         
+   18 00000006 00 00 00000000  AREA             mydata, DATA, READWRITE
+   19 00000000         
+   20 00000000 12345678 
+              ABCDEF12 
+              11223344 
+              A1B1C1D1 
+              55667788 
+              AABBCCDD 
+              A1B2C3D4 
+              FFFF1234 
+              CDEF9876 
+              FEDC9876 SRC     DCD              0x12345678, 0xABCDEF12, 0x11223
+344, 0xA1B1C1D1, 0x55667788, 0xAABBCCDD, 0xA1B2C3D4, 0xFFFF1234, 0xCDEF9876, 0x
+FEDC9876
+   21 00000028         
+   22 00000028                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=Project_
+5.d -oProject_5.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\
+ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=Project_5.lst Project_5.
+asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file Project_5.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file Project_5.asm
+   Uses
+      At line 2 in file Project_5.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 8 in file Project_5.asm
+   Uses
+      None
+Comment: ENTRY unused
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file Project_5.asm
+   Uses
+      At line 5 in file Project_5.asm
+      At line 9 in file Project_5.asm
+
+STOP 00000004
+
+Symbol: STOP
+   Definitions
+      At line 15 in file Project_5.asm
+   Uses
+      At line 16 in file Project_5.asm
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file Project_5.asm
+   Uses
+      None
+Comment: mycode unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+SRC 00000000
+
+Symbol: SRC
+   Definitions
+      At line 20 in file Project_5.asm
+   Uses
+      At line 11 in file Project_5.asm
+Comment: SRC used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 18 in file Project_5.asm
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+341 symbols in table

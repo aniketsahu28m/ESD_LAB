@@ -1,0 +1,45 @@
+	AREA RESET, DATA, READONLY
+	EXPORT __Vectors
+__Vectors
+	DCD 0x10001000
+	DCD Reset_Handler
+	ALIGN
+	AREA mycode, CODE, READONLY
+ENTRY
+	EXPORT Reset_Handler
+Reset_Handler
+	LDR R0, =SRC
+	LDR R1, =DST
+	LDR R2,[R0]
+	STR R2,[R1]
+	LDR R3,[R0,#4]!
+	STR R3,[R1,#4]!
+	LDR R4,[R0,#4]!
+	STR R4,[R1,#4]!
+	LDR R5,[R0,#4]!
+	STR R5,[R1,#4]!
+	LDR R6,[R0,#4]!
+	STR R6,[R1,#4]!
+	LDR R7,[R0,#4]!
+	STR R7,[R1,#4]!
+	LDR R8,[R0,#4]!
+	STR R8,[R1,#4]!
+	LDR R9,[R0,#4]!
+	STR R9,[R1,#4]!
+	LDR R10,[R0,#4]!
+	STR R10,[R1,#4]!
+	LDR R11,[R0,#4]!
+	STR R11,[R1,#4]!
+	
+	
+	
+STOP
+	B STOP
+	
+SRC DCD 0x12345678, 0xABCDEF12, 0x11223344, 0xA1B1C1D1, 0x55667788, 0xAABBCCDD, 0xA1B2C3D4, 0xFFFF1234, 0xCDEF9876, 0xFEDC9876
+	
+	AREA mydata, DATA, READWRITE
+DST DCD 0,0,0,0,0,0,0,0
+	
+	
+	

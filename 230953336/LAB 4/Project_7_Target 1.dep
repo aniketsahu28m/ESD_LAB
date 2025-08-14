@@ -1,0 +1,2 @@
+Dependencies for Project 'Project_7', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Project_7.asm)(0x689D8430)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC17xx --list "Project_7.lst" --xref -o "Project_7.o" --depend "Project_7.d")

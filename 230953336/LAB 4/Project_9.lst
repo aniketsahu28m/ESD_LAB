@@ -1,0 +1,170 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0x10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000         ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 480B            LDR              R0,=SRC
+   12 00000002 6801            LDR              R1,[R0]
+   13 00000004 4B0B            LDR              R3,=DST
+   14 00000006 F04F 0A08       MOV              R10,#8
+   15 0000000A         
+   16 0000000A         UP
+   17 0000000A F001 020F       AND              R2,R1,#0x0F
+   18 0000000E 2A09            CMP              R2,#09
+   19 00000010 D301            BCC              DOWN
+   20 00000012 F102 0207       ADD              R2,#7
+   21 00000016         
+   22 00000016         DOWN
+   23 00000016 F102 0230       ADD              R2,#0x30
+   24 0000001A F843 2B04       STR              R2,[R3],#4
+   25 0000001E EA4F 1111       LSR              R1,#4
+   26 00000022 F1BA 0A01       SUBS             R10,#1
+   27 00000026 D1F0            BNE              UP
+   28 00000028         
+   29 00000028         STOP
+   30 00000028 E7FE            B                STOP
+   31 0000002A         
+   32 0000002A 00 00 12AB56DF 
+                       SRC     DCD              0x12AB56DF
+   33 00000030         
+   34 00000030         
+   35 00000030 00000000 
+              00000000         AREA             mydata, DATA, READWRITE
+   36 00000000 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 DST     DCD              0,0,0,0,0,0,0,0
+   37 00000020         
+   38 00000020         
+   39 00000020         
+   40 00000020                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=Project_
+9.d -oProject_9.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\
+ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=Project_9.lst Project_9.
+asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file Project_9.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file Project_9.asm
+   Uses
+      At line 2 in file Project_9.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DOWN 00000016
+
+Symbol: DOWN
+   Definitions
+      At line 22 in file Project_9.asm
+   Uses
+      At line 19 in file Project_9.asm
+Comment: DOWN used once
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 8 in file Project_9.asm
+   Uses
+      None
+Comment: ENTRY unused
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file Project_9.asm
+   Uses
+      At line 5 in file Project_9.asm
+      At line 9 in file Project_9.asm
+
+SRC 0000002C
+
+Symbol: SRC
+   Definitions
+      At line 32 in file Project_9.asm
+   Uses
+      At line 11 in file Project_9.asm
+Comment: SRC used once
+STOP 00000028
+
+Symbol: STOP
+   Definitions
+      At line 29 in file Project_9.asm
+   Uses
+      At line 30 in file Project_9.asm
+Comment: STOP used once
+UP 0000000A
+
+Symbol: UP
+   Definitions
+      At line 16 in file Project_9.asm
+   Uses
+      At line 27 in file Project_9.asm
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file Project_9.asm
+   Uses
+      None
+Comment: mycode unused
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DST 00000000
+
+Symbol: DST
+   Definitions
+      At line 36 in file Project_9.asm
+   Uses
+      At line 13 in file Project_9.asm
+Comment: DST used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 35 in file Project_9.asm
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+344 symbols in table
